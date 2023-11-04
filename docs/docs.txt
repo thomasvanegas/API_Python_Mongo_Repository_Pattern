@@ -1,0 +1,7 @@
+1. https://fastapi.tiangolo.com/
+2. https://youtu.be/4e2VW3Nu-64?si=ZqtgplNmeYIz0Mb6
+3. https://github.com/jdrodas/CervezasColombia/tree/main/CervezasColombia_CS_API_Mongo
+4. https://github.com/mongodb-developer/mongodb-with-fastapi/blob/master/app.py
+
+# Controllers <-> Routes -> se definen las rutas de la api
+# Repositories <-> Schemas -> se definen las operaciones CRUD

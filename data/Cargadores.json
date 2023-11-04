@@ -1,0 +1,21 @@
+[
+    {
+        "estado": "Disponible",
+        "bus_id": null
+    },
+
+    {
+        "estado": "Disponible",
+        "bus_id": null
+    },
+
+    {
+        "estado": "Disponible",
+        "bus_id": null
+    },
+
+    {
+        "estado": "Ocupado",
+        "bus_id": "cadena_24_caracteres_objectid"
+    }
+]

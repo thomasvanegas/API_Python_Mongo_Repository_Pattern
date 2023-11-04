@@ -1,0 +1,10 @@
+-- 1. Creación Base de Datos
+-- use gestion_buses_cargadores
+
+-- 2. Creación de Colección de gestion_buses_cargadores
+-- db.createCollection('buses')
+
+-- 3. Inserción de Documentos en la Colección de buses
+-- db.buses.insertMany([Buses.json])
+-- NOTA: Al momento de invocar el método insertMany([]) dentro del arreglo copiar los JSON OBJECTS que se encuentran en data/Buses.json
+-- RECOMENDACIÓN: Insertar los primeros 20 buses y mediante método POST insertar el resto de buses para un consumo de API

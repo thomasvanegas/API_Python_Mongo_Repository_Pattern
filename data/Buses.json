@@ -1,0 +1,134 @@
+[
+    {
+        "placa": "ABC123",
+        "marca": "BMW",
+        "estado": "Parqueado",
+        "ult_hora_carga": 13
+    },
+    {
+        "placa": "QET468",
+        "marca": "Renault",
+        "estado": "Parqueado",
+        "ult_hora_carga": 10
+    },
+    {
+        "placa": "ZCB075",
+        "marca": "Chevrolet",
+        "estado": "En Operación",
+        "ult_hora_carga": 15
+    },
+    {
+        "placa": "WRG452",
+        "marca": "BMW",
+        "estado": "Parqueado",
+        "ult_hora_carga": 2
+    },
+    {
+        "placa": "THO657",
+        "marca": "Chevrolet",
+        "estado": "Cargando",
+        "ult_hora_carga": 1
+    },
+    {
+        "placa": "ERT098",
+        "marca": "Renault",
+        "estado": "En Operación",
+        "ult_hora_carga": 11
+    },
+    {
+        "placa": "JKH765",
+        "marca": "Renault",
+        "estado": "Cargando",
+        "ult_hora_carga": 12
+    },
+    {
+        "placa": "QAZ666",
+        "marca": "Chevrolet",
+        "estado": "En Operación",
+        "ult_hora_carga": 22
+    },
+    {
+        "placa": "VHI999",
+        "marca": "BMW",
+        "estado": "Cargando",
+        "ult_hora_carga": 23
+    },
+    {
+        "placa": "DEC777",
+        "marca": "Renault",
+        "estado": "Cargando",
+        "ult_hora_carga": 22
+    },
+    {
+        "placa": "AKT125",
+        "marca": "BMW",
+        "estado": "En Operación",
+        "ult_hora_carga": 10
+    },
+    {
+        "placa": "TVS310",
+        "marca": "BMW",
+        "estado": "En Operación",
+        "ult_hora_carga": 4
+    },
+    {
+        "placa": "AKT200",
+        "marca": "Renault",
+        "estado": "Cargando",
+        "ult_hora_carga": 1
+    },
+    {
+        "placa": "IBM500",
+        "marca": "Chevrolet",
+        "estado": "En Operación",
+        "ult_hora_carga": 23
+    },
+    {
+        "placa": "EMJ197",
+        "marca": "BMW",
+        "estado": "Cargando",
+        "ult_hora_carga": 23
+    },
+    {
+        "placa": "UPB888",
+        "marca": "BMW",
+        "estado": "Parqueado",
+        "ult_hora_carga": 2
+    },
+    {
+        "placa": "ITM999",
+        "marca": "Chevrolet",
+        "estado": "Cargando",
+        "ult_hora_carga": 3
+    },
+    {
+        "placa": "EAF111",
+        "marca": "BMW",
+        "estado": "Parqueado",
+        "ult_hora_carga": 3
+    },
+    {
+        "placa": "JAJ765",
+        "marca": "Renault",
+        "estado": "Cargando",
+        "ult_hora_carga": 12
+    },
+    {
+        "placa": "LOL777",
+        "marca": "Renault",
+        "estado": "En Operación",
+        "ult_hora_carga": 11
+    },
+    {
+        "placa": "KJK787",
+        "marca": "Renault",
+        "estado": "Cargando",
+        "ult_hora_carga": 10
+    },
+    {
+        "placa": "HOL470",
+        "marca": "BMW",
+        "estado": "Parqueado",
+        "ult_hora_carga": 23
+    }
+]
