@@ -1,10 +1,103 @@
+-- Script Creación Modelo de Datos - Parcial N°4 - Tópicos Avanzados en Bases de Datos
+-- Motor de BD: MongoDB
+
+-- Estudiante N°1: Eliana Giraldo Duque - ID: 000321721 - eliana.giraldod@upb.edu.co
+-- Estudiante N°2: Thomas Camilo Vanegas Acevedo - ID: 000287437 - thomas.vanegasa@upb.edu.co
+
+-- 0.1. Descarga de imagen de MongoDB -- https://hub.docker.com/_/mongo
+-- docker pull mongo
+-- Nota: Por defecto se descarga la versión latest de MongoDB
+
+-- 0. 2. Creación del Contenedor de docker
+-- docker run --name mongo -e “MONGO_INITDB_ROOT_USERNAME=mongoadmin” -e MONGO_INITDB_ROOT_PASSWORD=unaClav3 -p 27017:27017 -d mongo:latest
+
 -- 1. Creación Base de Datos
--- use gestion_buses_cargadores
+-- use gestion_buses_cargadores;
 
--- 2. Creación de Colección de gestion_buses_cargadores
--- db.createCollection('buses')
+-- 2. Creación de Colecciones sin JSON SCHEMA VALIDATOR
+-- db.createCollection("buses");
+-- db.createCollection("cargadores");
+-- db.createCollection("horas");
+-- db.createCollection("utilizacion_cargadores_hora");
+-- db.createCollection("utilizacion_buses_hora");
 
--- 3. Inserción de Documentos en la Colección de buses
--- db.buses.insertMany([Buses.json])
--- NOTA: Al momento de invocar el método insertMany([]) dentro del arreglo copiar los JSON OBJECTS que se encuentran en data/Buses.json
--- RECOMENDACIÓN: Insertar los primeros 20 buses y mediante método POST insertar el resto de buses para un consumo de API
+-- 3. Creación de Colecciones con VALIDACIÓN -> JSON SCHEMA VALIDATOR
+
+-- db.createCollection("buses", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Conjunto de Flota de Buses",
+            required: ["placa", "marca", "estado", "ult_hora_carga"],
+            properties: {
+                placa: {
+                    bsonType: "string",
+                    description: "'placa' DEBE ser una cadena de caracteres con 3 letras y 3 numeros, ademas NO NULO"
+                },
+                marca: {
+                    bsonType: "string",
+                    description: "'marca' DEBE ser una cadena de caracteres con mayúscula inicial y no puede ser nulo"
+                },
+                estado: {
+                    bsonType: "string",
+                    description: "'estado' DEBE ser una cadena de caracteres y no puede ser nulo"
+                },
+                ult_hora_carga: {
+                    bsonType: "int",
+                    minimun: 0,
+                    maximum: 23,
+                    description: "'ult_hora_carga' DEBE ser un ENTERO en un rango de [0, 23] y no puede ser nulo"
+                }
+            }
+        }
+    }
+} )
+
+-- db.createCollection("cargadores", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Conjunto de Cargadores",
+            required: [ "estado" ],
+            properties: {
+                estado: {
+                    bsonType: "string",
+                    description: "'estado' DEBE ser una cadena de caracteres y no puede ser nulo - [Disponible, Ocupado]"
+                }
+            }
+        }
+    }
+} )
+
+-- 4. Inserción de Documentos en la Colección de buses
+-- db.buses.insertMany([Buses.json]);
+-- NOTA: Al momento de invocar el método insertMany([]) dentro del arreglo copiar los JSON 
+-- OBJECTS que se encuentran en ./data/Buses.json
+
+-- 5. Inserción  de Documentos en la Colección de cargadores
+-- db.cargadores.insertMany([./Cargadores.json]);
+-- Nota -> Cargadores.json es el archivo de abastecimiento de datos de la Colección
+
+-- 6. Consultas para Contruit el Repositorio
+
+-- 6.1. Obtener (GET) todos los buses
+-- db.buses.find();
+
+-- 6.2. Obtener (GET) todos los cargadores
+-- db.cargadores.find();
+
+-- 6.3. Obtener (GET) todas las horas
+-- db.horas.find();
+
+-- 6.4. Obtener (GET) bus por Id
+-- db.buses.find({_id: ObjectId('651ff74da87f7d3f845fd9d7')});
+-- Nota: el ObjectId es una cadena con 24 caracteres
+
+-- 6.4. Obtener (GET) cargador por Id
+-- db.cargadores.find({_id: ObjectId('651ff74da87f7d3f845fd9d7')});
+
+-- 6.5. Crear (POST) cargador
+-- db.cargadores.insertOne({"estado": "disponible", "bus_id": null})
+
+-- 6.6. Crear (POST) bus
+-- db.buses.insertOne({"placa": "TTT777", "marca": "BMW", "estado": "Parqueado", "ult_hora_carga": 0})
