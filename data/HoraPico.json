@@ -1,0 +1,123 @@
+
+
+horasPico = {
+    "hora": 1,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 2,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 3,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 4,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 5,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 6,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 7,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 8,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 9,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 10,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 11,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 12,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 13,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 14,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 15,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 16,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 17,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 18,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 19,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 20,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 21,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 22,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 23,
+    "hora_registro": datetime.datetime.now()
+}
+
+horasPico = {
+    "hora": 24,
+    "hora_registro": datetime.datetime.now()
+}
+
+collection.insert_one(horasPico)
