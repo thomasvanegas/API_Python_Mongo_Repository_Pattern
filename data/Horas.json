@@ -1,0 +1,123 @@
+[
+    {
+        "hora": 0,
+        "descripcion": "12 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 1,
+        "descripcion": "1 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 2,
+        "descripcion": "2 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 3,
+        "descripcion": "3 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 4,
+        "descripcion": "4 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 5,
+        "descripcion": "5 AM",
+        "hora_pico": true
+    },
+    {
+        "hora": 6,
+        "descripcion": "6 AM",
+        "hora_pico": true
+    },
+    {
+        "hora": 7,
+        "descripcion": "7 AM",
+        "hora_pico": true
+    },
+    {
+        "hora": 8,
+        "descripcion": "8 AM",
+        "hora_pico": true
+    },
+    {
+        "hora": 9,
+        "descripcion": "9 AM",
+        "hora_pico": true
+    },
+    {
+        "hora": 10,
+        "descripcion": "10 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 11,
+        "descripcion": "11 AM",
+        "hora_pico": false
+    },
+    {
+        "hora": 12,
+        "descripcion": "12 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 13,
+        "descripcion": "1 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 14,
+        "descripcion": "2 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 15,
+        "descripcion": "3 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 16,
+        "descripcion": "4 PM",
+        "hora_pico": true
+    },
+    {
+        "hora": 17,
+        "descripcion": "7 PM",
+        "hora_pico": true
+    },
+    {
+        "hora": 18,
+        "descripcion": "6 PM",
+        "hora_pico": true
+    },
+    {
+        "hora": 19,
+        "descripcion": "7 PM",
+        "hora_pico": true
+    },
+    {
+        "hora": 20,
+        "descripcion": "8 PM",
+        "hora_pico": true
+
+    },
+    {
+        "hora": 21,
+        "descripcion": "9 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 22,
+        "descripcion": "10 PM",
+        "hora_pico": false
+    },
+    {
+        "hora": 23,
+        "descripcion": "11 PM",
+        "hora_pico": false
+    }
+]
