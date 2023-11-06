@@ -1,5 +1,4 @@
 
-
 horasPico = {
     "hora": 1,
     "hora_registro": datetime.datetime.now()
