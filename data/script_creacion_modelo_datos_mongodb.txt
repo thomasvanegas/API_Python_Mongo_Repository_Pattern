@@ -95,6 +95,50 @@
     }
 } )
 
+-- db.createCollection("utilizacion_buses_hora", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Historial de Utilización de los Buses Cada Hora",
+            required: ["bus_id", "hora_id"],
+            properties: {
+                hora_id: {
+                    bsonType: "string",
+                    description: "'Hora'  DEBE ser una cadena de 24 caracteres y no puede ser nulo"
+                },
+                bus_id: {
+                    bsonType: "string",
+                    description: "'bus_id' DEBE ser una cadena de caracteres y no puede ser nulo"
+                }
+            }
+        }
+    }
+} )
+
+-- db.createCollection("utilizacion_cargadores_hora", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Historial de Utilización de los Cargadores Cada Hora",
+            required: ["cargador_id", "bus_id", "hora_id"],
+            properties: {
+                cargador_id: {
+                    bsonType: "string",
+                    description: "'cargador_id' DEBE ser una cadena de 24 caracteres y no puede ser nulo"
+                },
+                hora_id: {
+                    bsonType: "string",
+                    description: "'Hora'  DEBE ser una cadena de 24 caracteres y no puede ser nulo"
+                },
+                bus_id: {
+                    bsonType: "string",
+                    description: "'bus_id' DEBE ser una cadena de caracteres y no puede ser nulo"
+                }
+            }
+        }
+    }
+} )
+
 -- 4. Inserción de Documentos en la Colección de buses
 -- db.buses.insertMany([Buses.json]);
 -- NOTA: Al momento de invocar el método insertMany([]) dentro del arreglo copiar los JSON 
@@ -104,26 +148,31 @@
 -- db.cargadores.insertMany([./Cargadores.json]);
 -- Nota -> Cargadores.json es el archivo de abastecimiento de datos de la Colección
 
--- 6. Consultas para Contruit el Repositorio
+-- 6. Inserción de Documentos en la Colección de horas
+-- db.horas.insertMany([./Horas.json])
+-- Nota -> Horas.json es el archivo de abastecimiento de datos de la Colección -> Arreglo de Objetos JSON
 
--- 6.1. Obtener (GET) todos los buses
+
+-- 7. Algunas Consultas para Contruir el Repositorio
+
+-- 7.1. Obtener (GET) todos los buses
 -- db.buses.find();
 
--- 6.2. Obtener (GET) todos los cargadores
+-- 7.2. Obtener (GET) todos los cargadores
 -- db.cargadores.find();
 
--- 6.3. Obtener (GET) todas las horas
+-- 7.3. Obtener (GET) todas las horas
 -- db.horas.find();
 
--- 6.4. Obtener (GET) bus por Id
+-- 7.4. Obtener (GET) bus por Id
 -- db.buses.find({_id: ObjectId('651ff74da87f7d3f845fd9d7')});
 -- Nota: el ObjectId es una cadena con 24 caracteres
 
--- 6.4. Obtener (GET) cargador por Id
+-- 7.4. Obtener (GET) cargador por Id
 -- db.cargadores.find({_id: ObjectId('651ff74da87f7d3f845fd9d7')});
 
--- 6.5. Crear (POST) cargador
+-- 7.5. Crear (POST) cargador
 -- db.cargadores.insertOne({"estado": "disponible", "bus_id": null})
 
--- 6.6. Crear (POST) bus
+-- 7.6. Crear (POST) bus
 -- db.buses.insertOne({"placa": "TTT777", "marca": "BMW", "estado": "Parqueado", "ult_hora_carga": 0})
