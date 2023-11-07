@@ -177,9 +177,19 @@
 -- 7.6. Crear (POST) bus
 -- db.buses.insertOne({"placa": "TTT777", "marca": "BMW", "estado": "Parqueado", "ult_hora_carga": 0})
 
---7.7. Crear actualización de los cargadores
---db.collectio=db.cargadores
+--7.7. Crear (UPDATE) de los cargadores
+--collection = db.cargadores
 --actualizacion = {"$set": {"estado": "nuevo_estado"}}
---resultado= collection.update_many({_id: ObjectId('651ff74da87f7d3f845fd9d7')}, actualizacion)
---print(f"Cargadores actualizados: {resultado.modified_count}")
+--resultadocagador = collection.update_many({_id: ObjectId('654a359ee75e620088f2c7bc')}, actualizacion)
 
+--7.8  Crear (DELETE) de los cargadores
+--collection = db.cargadores
+--eliminarestado = "ocupado"
+--consultaeliminarestado = {"estado": eliminarestado}
+--resultadocagador = collection.delete_many(consultaeliminarestado)
+
+--7.9 Crear (UPDATE) de los buses 
+--db.buses.update_many({"$set": {"estado": "Parqueado"}, "$eq": {"ult_hora_carga": 10}})
+
+--8 Crear (DELETE) de los buses 
+--db.buses.delete_many({"$set": {"estado": "En Operación"}, "$eq": {"ult_hora_carga": 13}})
