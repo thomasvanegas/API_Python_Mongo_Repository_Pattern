@@ -7,12 +7,13 @@ from typing import Union
 
 # Importando Controllers
 from Controllers.CargadoresController import router as CargadorRouter
-from Controllers.BusesController import buses_router
+from Controllers.BusesController import router as BusRouter
 
 # Instanciamiento
 app = FastAPI()
 
 app.include_router(CargadorRouter, tags=["Cargador"], prefix="/api/cargadores")
+app.include_router(BusRouter, tags=["Bus"], prefix="/api/buses")
 
 # --- --- Definición de la ruta inicial --- ---
 @app.get("/", tags=["Root"])

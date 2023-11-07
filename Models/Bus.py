@@ -5,8 +5,17 @@ from DbContexts.MongoDbContext import PyObjectId
 
 # Definicion del modelo -> Todos los modelos heredan de la clase BaseModel
 class Bus(BaseModel):
-    id: Optional[PyObjectId] = Field(alias="_id", default=None)
-    placa: str
-    marca: str
-    estado: str
+    placa: str = Field(...)
+    marca: str = Field(...)
+    estado: str = Field(...)
     ult_hora_carga: int = Field(..., gt=-1, lt=24)
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "placa": "ABC123",
+                "marca": "BMW",
+                "estado": "En Operación",
+                "ult_hora_carga": 12
+            }
+        }
