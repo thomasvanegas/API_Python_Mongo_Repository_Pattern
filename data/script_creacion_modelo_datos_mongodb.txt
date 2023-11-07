@@ -176,3 +176,10 @@
 
 -- 7.6. Crear (POST) bus
 -- db.buses.insertOne({"placa": "TTT777", "marca": "BMW", "estado": "Parqueado", "ult_hora_carga": 0})
+
+--7.7. Crear actualización de los cargadores
+--db.collectio=db.cargadores
+--actualizacion = {"$set": {"estado": "nuevo_estado"}}
+--resultado= collection.update_many({_id: ObjectId('651ff74da87f7d3f845fd9d7')}, actualizacion)
+--print(f"Cargadores actualizados: {resultado.modified_count}")
+
