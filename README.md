@@ -24,6 +24,7 @@ asimismo, los archivos de carga se encuentran en el mismo directorio **/data/ co
 2. http://localhost:8000/ -> Ruta raíz
 3. http://localhost:8000/api/cargadores/ -> Todos los Métodos HTTP disponibles [GET, POST, PUT, DELETE] <-> [CREATE, READ, UPDATE, DELETE]
 4. http://localhost:8000/api/buses/ -> Todos los Métodos HTTP disponibles [GET, POST, PUT, DELETE] <-> [CREATE, READ, UPDATE, DELETE]
+5. http://localhost:8000/api/horas/ -> Todos los Métodos HTTP disponibles [GET, POST, PUT, DELETE] <-> [CREATE, READ, UPDATE, DELETE]
 
 ## Instalación de Dependencias
 ---
