@@ -1,8 +1,8 @@
 -- Script Creación Modelo de Datos - Parcial N°4 - Tópicos Avanzados en Bases de Datos
 -- Motor de BD: MongoDB
 
--- Estudiante N°1: Eliana Giraldo Duque - ID: 000321721 - eliana.giraldod@upb.edu.co
--- Estudiante N°2: Thomas Camilo Vanegas Acevedo - ID: 000287437 - thomas.vanegasa@upb.edu.co
+-- Estudiante N°1: Thomas Camilo Vanegas Acevedo - ID: 000287437 - thomas.vanegasa@upb.edu.co
+-- Estudiante N°2: Eliana Giraldo Duque - ID: 000321721 - eliana.giraldod@upb.edu.co
 
 -- 0.1. Descarga de imagen de MongoDB -- https://hub.docker.com/_/mongo
 -- docker pull mongo
