@@ -44,3 +44,31 @@ async def get_cargador_by_id(id):
     if cargador:
         return Response(cargador, f"Cargador con el id {id} fue encontrado CORRECTAMENTE")
     return ErrorResponse("Un Error ha Ocurrido.", 404, "El cargador con ID ingresado No Existe")
+
+@router.put("/{id}")
+async def update_cargador_by_id(id: str, req: UpdateCargador = Body(...)):
+    req = {k: v for k, v in req.dict().items() if v is not None}
+    cargador_actualizado = await update_cargador(id, req)
+    if cargador_actualizado:
+        return Response(
+            f"El Cargadpr con ID: {id} ha sido actualizado",
+            "Cargador Actualizado Correctamente",
+        )
+    return ErrorResponseModel(
+        "Un Error ha Ocurrido :(",
+        404,
+        "Ha ocurrido un erro mientras se actualizaba el cargador",
+    )
+
+@router.delete("/{id}", response_description="Eliminación de un Cargador desde la BD")
+async def delete_cargador_by_id(id: str):
+    cargador_eliminado = await delete_cargador(id)
+    if cargador_eliminado:
+        return Response(
+            f"El Cargador con el ID: {id} Ha Sido ELIMINADO CORRECTAMENTE", "Cargador Eliminado Correctamente"
+        )
+    return ErrorResponseModel(
+        "Un Error ha Ocurrido :(",
+        404, 
+        f"El cargador con ID {id} NO EXISTE en la Base de Datos"
+    )
