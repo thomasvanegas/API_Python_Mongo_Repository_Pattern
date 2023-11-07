@@ -1,3 +1,6 @@
+# Importando uvicorn
+import uvicorn
+
 # Importando el framework FastAPI
 from fastapi import FastAPI
 from typing import Union

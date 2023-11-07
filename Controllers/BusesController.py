@@ -13,17 +13,17 @@ from tabulate import tabulate
 router = APIRouter()
 
 # Definicion de ruta raiz
-@router.get('/')
-def read_root() -> str:
-    return 'Hola, Bienvenido a la Implementación de la API como Desarrollo del Parcial N°4 - Gestión de Implementación de Buses y Cargadores'
+@router.get('/api', tags=["Root"])
+async def read_root() -> dict:
+    return {"response": 'Hola, Bienvenido a la Implementación de la API como Desarrollo del Parcial N°4 - Gestión de Implementación de Buses y Cargadores'}
 
 # --- --- Rutas (HTTP VERBS) para la Entidad/Coleccion Buses --- ---
-@router.get('/buses')
+@router.get('/api/buses')
 def find_all_buses():
     return BusesService(cliente.gestion_buses_cargadores.buses.find())
 
 # --- --- Obtener un bus dado un _id: ObjectID('')
-@router.get('/buses/{id}')
+@router.get('/api/buses/{id}')
 def find_bus_by_id():
     return {'placa': 'ABC123'}
 

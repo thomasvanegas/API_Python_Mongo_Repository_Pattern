@@ -69,6 +69,32 @@
     }
 } )
 
+-- db.createCollection("horas", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Conjunto de Horas Existentes",
+            required: ["hora", "descripcion", "hora_pico"],
+            properties: {
+                hora: {
+                    bsonType: "int",
+                    minimun: 0,
+                    maximum: 23,
+                    description: "'Hora'  DEBE ser un número entero en un rango [0, 23] y no puede ser nulo"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "'descripcion' DEBE ser una cadena de caracteres y no puede ser nulo"
+                },
+                hora_pico: {
+                    bsonType: "boolean",
+                    description: "'hora_pico' DEBE ser un valor entre [true, false] y no puede ser nulo"
+                }
+            }
+        }
+    }
+} )
+
 -- 4. Inserción de Documentos en la Colección de buses
 -- db.buses.insertMany([Buses.json]);
 -- NOTA: Al momento de invocar el método insertMany([]) dentro del arreglo copiar los JSON 
