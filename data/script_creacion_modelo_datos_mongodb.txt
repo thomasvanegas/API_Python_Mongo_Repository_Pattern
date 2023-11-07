@@ -192,4 +192,4 @@
 --db.buses.update_many({"$set": {"estado": "Parqueado"}, "$eq": {"ult_hora_carga": 10}})
 
 --8 Crear (DELETE) de los buses 
---db.buses.delete_many({"$set": {"estado": "En Operación"}, "$eq": {"ult_hora_carga": 15}})
+--db.buses.delete_many({"$set": {"estado": "En Operación"}, "$eq": {"ult_hora_carga": 13}})
