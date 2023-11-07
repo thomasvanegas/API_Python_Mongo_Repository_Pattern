@@ -23,6 +23,7 @@ asimismo, los archivos de carga se encuentran en el mismo directorio **/data/ co
 1. http://localhost:8000/docs -> Implementación de swagger y visualizar rutas disponibles y sus métodos HTTP asociados
 2. http://localhost:8000/ -> Ruta raíz
 3. http://localhost:8000/api/cargadores/ -> Todos los Métodos HTTP disponibles [GET, POST, PUT, DELETE] <-> [CREATE, READ, UPDATE, DELETE]
+4. http://localhost:8000/api/buses/ -> Todos los Métodos HTTP disponibles [GET, POST, PUT, DELETE] <-> [CREATE, READ, UPDATE, DELETE]
 
 ## Instalación de Dependencias
 ---
