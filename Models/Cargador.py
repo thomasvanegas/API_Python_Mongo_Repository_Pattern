@@ -6,6 +6,13 @@ from DbContexts.MongoDbContext import PyObjectId
 
 # Definicion del modelo Cargador
 class Cargador(BaseModel):
-    id: Optional[PyObjectId] = Field(alias="_id", default=None)
+    # id: Optional[PyObjectId] = Field(alias="_id", default=None)
     estado: str = Field(...)
-    bus_id: str = Field(...)
+    bus_id: Optional[str] = Field(...)
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "estado": "Disponible",
+            }
+        }

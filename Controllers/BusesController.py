@@ -12,11 +12,6 @@ from tabulate import tabulate
 # Instaciamiento
 buses_router = APIRouter()
 
-# Definicion de ruta raiz
-@buses_router.get('/api', tags=["Root"])
-async def read_root() -> dict:
-    return {"response": 'Hola, Bienvenido a la Implementación de la API como Desarrollo del Parcial N°4 - Gestión de Implementación de Buses y Cargadores'}
-
 # --- --- Rutas (HTTP VERBS) para la Entidad/Coleccion Buses --- ---
 @buses_router.get('/api/buses')
 def find_all_buses():

@@ -1,48 +1,46 @@
 # Importando paquetes
-from fastapi import APIRouter, HTTPException, FastAPI
+from fastapi import APIRouter, HTTPException, Body
 from fastapi.responses import Response
-# Importacion del contexto para realizar la conexión
-from DbContexts.MongoDbContext import cargadores_collection
-# Importacion de Servicios
-# from Services.CargadorService import CargadoresServices, CargadorService
-# Importacion de los Modelos
-from Models.Cargador import Cargador
-from Models.CargadorCollection import CargadorCollection
+from fastapi.encoders import jsonable_encoder
 # Importando el paquete tabulate
 from tabulate import tabulate
 # Importando el ObjectId
-from bson import ObjectId
+from bson.objectid import ObjectId
+
+# Importando las operaciones CRUD del CargadorRepository
+from Repositories.CargadorRepository import (
+    read_all_cargadores,
+    read_cargador_by_id,
+    update_cargador,
+    delete_cargador,
+    create_new_cargador
+)
+
+# Importacion de los Modelos
+from Models.ErrorResponse import ErrorResponse
+from Models.Response import Response
+from Models.Cargador import Cargador
+from Models.UpdateCargador import UpdateCargador
 
 # Instaciamiento
-cargadores_router = APIRouter()
+router = APIRouter()
 
-# Obtener todos los cargadores
-@cargadores_router.get(
-    "/api/cargadores/", 
-    response_description="Lista/Colección de Cargadores",
-    response_model=CargadorCollection,
-    response_model_by_alias=False
-)
-async def find_all_cargadores():
-    cargadores_list = CargadorCollection(cargadores = await cargadores_collection.find().to_list(100))
-    return cargadores_list
+@router.post("/", response_description="Crear e Insertar un Nuevo Cargador a la Base de Datos")
+async def insertar_nuevo_cargador(cargador: Cargador = Body(...)):
+    cargador = jsonable_encoder(cargador)
+    nuevo_cargador = await create_new_cargador(cargador)
+    return Response(nuevo_cargador, "Cargador Creado e Insertado a la BD CORRECTAMENTE")
 
-#Obtener cargador por id
-@cargadores_router.get(
-    "/api/cargadores/{id}",
-    response_description="Obtener un único cargador por Id",
-    response_model=Cargador,
-    response_model_by_alias=False,
-)
-async def find_one_cargador(id: str):
-    """
-    
-    Obtener un cargador dado un Id
-    
-    """
-    if (
-        cargador := await cargadores_collection.find_one({"_id": ObjectId(id)})
-    ) is not None:
-        return cargador
+@router.get("/", response_description="Obtener Todos los Cargadores")
+async def get_all_cargadores():
+    cargadores = await read_all_cargadores()
+    if cargadores:
+        return Response(cargadores, "Cargadores Extraidos de la BD CORRECTAMENTE")
+    return Response(cargadores, "No Hay Cargadores")
 
-    raise HTTPException(status_code=404, detail=f"El cargador con id: {id} no existe")
+@router.get("/{id}", response_description="Obtener un Cargador por ID")
+async def get_cargador_by_id(id):
+    cargador = await read_cargador_by_id(id)
+    if cargador:
+        return Response(cargador, f"Cargador con el id {id} fue encontrado CORRECTAMENTE")
+    return ErrorResponse("Un Error ha Ocurrido.", 404, "El cargador con ID ingresado No Existe")
