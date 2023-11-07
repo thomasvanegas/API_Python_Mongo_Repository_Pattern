@@ -6,9 +6,11 @@ from fastapi import FastAPI
 from typing import Union
 
 # Importando Controllers
-from Controllers.BusesController import router
+from Controllers.CargadoresController import cargadores_router
+from Controllers.BusesController import buses_router
 
 # Instanciamiento
 app = FastAPI()
 
-app.include_router(router)
+app.include_router(cargadores_router)
+app.include_router(buses_router)

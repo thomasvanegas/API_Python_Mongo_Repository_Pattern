@@ -9,7 +9,7 @@
 -- Nota: Por defecto se descarga la versión latest de MongoDB
 
 -- 0. 2. Creación del Contenedor de docker
--- docker run --name mongo -e “MONGO_INITDB_ROOT_USERNAME=mongoadmin” -e MONGO_INITDB_ROOT_PASSWORD=unaClav3 -p 27017:27017 -d mongo:latest
+-- docker run --name mongo_container -e “MONGO_INITDB_ROOT_USERNAME=mongoadmin” -e MONGO_INITDB_ROOT_PASSWORD=unaClav3 -p 27017:27017 -d mongo:latest
 
 -- 1. Creación Base de Datos
 -- use gestion_buses_cargadores;
@@ -44,7 +44,7 @@
                 },
                 ult_hora_carga: {
                     bsonType: "int",
-                    minimun: 0,
+                    minimum: 0,
                     maximum: 23,
                     description: "'ult_hora_carga' DEBE ser un ENTERO en un rango de [0, 23] y no puede ser nulo"
                 }
@@ -78,7 +78,7 @@
             properties: {
                 hora: {
                     bsonType: "int",
-                    minimun: 0,
+                    minimum: 0,
                     maximum: 23,
                     description: "'Hora'  DEBE ser un número entero en un rango [0, 23] y no puede ser nulo"
                 },

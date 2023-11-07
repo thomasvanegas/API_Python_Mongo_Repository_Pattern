@@ -10,12 +10,40 @@
     },
 
     {
-        "estado": "Disponible",
-        "bus_id": null
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7b7"
     },
 
     {
         "estado": "Ocupado",
-        "bus_id": "cadena_24_caracteres_objectid"
+        "bus_id": "654a359ee75e620088f2c7b9"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7bb"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7bc"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7bf"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7c1"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7c3"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7c5"
+    },
+    {
+        "estado": "Ocupado",
+        "bus_id": "654a359ee75e620088f2c7c7"
     }
 ]
