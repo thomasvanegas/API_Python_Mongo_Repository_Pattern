@@ -1,0 +1,28 @@
+# Colección de buses
+#Buscollection = db["Bus"]
+
+# Colección de horas
+#Horacollection = db["Hora"]
+
+# Consulta para obtener el historial de buses por hora
+#pipeline = [
+    #{
+        #"$lookup": {
+            #"from": "horas",
+            #"localField": "hora",  
+            #"foreignField": "_id",  
+            #"as": "historial_horas"
+        #}
+    #},
+    #{
+        #"$group": {
+           # "_id": "$historial_horas.hora",  
+            #"total_buses": {"$sum": 1}  
+        #}
+    #}
+#]
+
+#historial = list(Buscollection.aggregate(pipeline))
+
+#for registro in historial:
+    #print(f'Hora: {registro["_id"]}, Total de Buses: {registro["total_buses"]}')
